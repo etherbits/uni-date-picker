@@ -1,0 +1,39 @@
+.selectedDate {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: .5rem;
+  width: fit-content;
+  border: solid 1px #f1f1f1;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+}
+
+
+.calendarWeekdays,
+.calendarDays {
+  display: grid;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.weekdayBox,
+.dayBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+}
+
+.dayBox {
+  color: #aaaaaa;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.weekdayBox {
+  text-transform: capitalize;
+  font-weight: 500;
+}

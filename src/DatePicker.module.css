@@ -1,0 +1,42 @@
+.calendarRoot {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  padding: 1rem;
+  background-color: #fff;
+  color: #000;
+  border-radius: 10px;
+  width: 300px;
+  box-sizing: border-box;
+}
+
+.calendarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.currentMonth {
+  all: unset;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+
+.monthButton {
+  all: unset;
+  display: flex;
+  cursor: pointer;
+}
+
+.calendarBody {
+  position: relative;
+  overflow: auto;
+}
+
+.submitButton{
+  all: unset;
+  display: flex;
+  justify-content: center;
+}
