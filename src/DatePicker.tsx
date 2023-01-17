@@ -30,7 +30,6 @@ export const DatePicker: React.FC<Props> = ({
   submitComponent,
   onSubmit,
 }) => {
-  // dayjs.locale(locale);
   const [calendarDate, setCalendarDate] = useState<Dayjs>(defaultDate);
   const [selectedDate, setSelectedDate] = useState<Dayjs | null>(null);
   const [viewIndex, setViewIndex] = useState<VIEW>(VIEW.DAYS);
@@ -121,6 +120,7 @@ export const DatePicker: React.FC<Props> = ({
     <motion.div layout className={styles.calendarRoot} style={{ width: width }}>
       <div className={styles.calendarHeader}>
         <button
+          title="Get previous"
           className={styles.monthButton}
           onClick={() => {
             handleArrow(viewIndex, -1);
@@ -139,6 +139,7 @@ export const DatePicker: React.FC<Props> = ({
           {ViewHead[viewIndex]}
         </motion.button>
         <button
+          title="Get next"
           className={styles.monthButton}
           onClick={() => {
             handleArrow(viewIndex, 1);
