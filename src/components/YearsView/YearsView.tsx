@@ -14,6 +14,14 @@ export const YearsView: React.FC<Props> = ({
   calendarDate,
   handleYearSelect,
 }) => {
+  const handleSelect = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    year: number
+  ) => {
+    e.stopPropagation();
+    handleYearSelect(year);
+  };
+
   return (
     <motion.ul className={styles.yearList}>
       {[...Array(20).keys()].map((i) => {
@@ -34,7 +42,7 @@ export const YearsView: React.FC<Props> = ({
                   ? { backgroundColor: "#2984ce", color: "#fff" }
                   : {}
               }
-              onClick={() => handleYearSelect(currentYear)}
+              onClick={(e) => handleSelect(e, currentYear)}
             >
               {currentYear}
             </motion.button>

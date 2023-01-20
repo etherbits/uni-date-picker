@@ -14,6 +14,14 @@ export const MonthsView: React.FC<Props> = ({
   calendarDate,
   handleMonthSelect,
 }) => {
+  const handleSelect = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    i: number
+  ) => {
+    e.stopPropagation();
+    handleMonthSelect(i);
+  };
+
   return (
     <motion.ul
       className={styles.monthList}
@@ -39,7 +47,7 @@ export const MonthsView: React.FC<Props> = ({
                 : {}
             }
             transition={{ duration: 0.25 }}
-            onClick={() => handleMonthSelect(i)}
+            onClick={(e) => handleSelect(e, i)}
           >
             {month}
           </motion.button>
