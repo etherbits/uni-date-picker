@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import styles from "./DAysVIew.module.css";
+import styles from "./DaysView.module.css";
 import dayjs, { Dayjs } from "dayjs";
 
 interface Props {
