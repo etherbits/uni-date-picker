@@ -85,9 +85,9 @@ export const DatePicker: React.FC<Props> = ({
   const ViewHead = {
     0: calendarDate.format("MMMM, YYYY"),
     1: calendarDate.format("YYYY"),
-    2: `${Math.floor(calendarDate.get("year") / 10)}0-${
-      Math.floor(calendarDate.get("year") / 10) + 2
-    }0`,
+    2: `${Math.floor(calendarDate.get("year") / 20) * 20}-${
+      Math.floor(calendarDate.get("year") / 20) * 20 + 20
+    }`,
   };
 
   const ViewBody = {
@@ -120,6 +120,7 @@ export const DatePicker: React.FC<Props> = ({
     <motion.div layout className={styles.calendarRoot} style={{ width: width }}>
       <div className={styles.calendarHeader}>
         <button
+          type="button"
           title="Get previous"
           className={styles.monthButton}
           onClick={() => {
@@ -129,8 +130,10 @@ export const DatePicker: React.FC<Props> = ({
           <ChevronLeft />
         </button>
         <motion.button
+          type="button"
           className={styles.currentMonth}
           disabled={viewIndex >= VIEW.YEARS}
+          style={{ cursor: viewIndex >= VIEW.YEARS ? "default" : "pointer" }}
           whileHover={
             viewIndex >= VIEW.YEARS ? {} : { backgroundColor: "#f1f1f1" }
           }
@@ -139,6 +142,7 @@ export const DatePicker: React.FC<Props> = ({
           {ViewHead[viewIndex]}
         </motion.button>
         <button
+          type="button"
           title="Get next"
           className={styles.monthButton}
           onClick={() => {

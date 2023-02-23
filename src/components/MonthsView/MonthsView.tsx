@@ -31,6 +31,7 @@ export const MonthsView: React.FC<Props> = ({
       {dayjs.monthsShort().map((month, i) => (
         <li key={i}>
           <motion.button
+          type="button"
             className={styles.itemSelectButton}
             whileHover={
               selectedDate?.get("month") === i &&
