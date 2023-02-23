@@ -25,7 +25,6 @@ export const YearsView: React.FC<Props> = ({
   return (
     <motion.ul className={styles.yearList}>
       {[...Array(20).keys()].map((i) => {
-        console.log(Math.floor(calendarDate.get("year") / 20) * 20)
         const currentYear = Math.floor(calendarDate.get("year") / 20) * 20 + i;
         return (
           <li key={i}>
